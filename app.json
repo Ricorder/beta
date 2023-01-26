@@ -2,6 +2,7 @@
   "expo": {
     "name": "Counts",
     "slug": "counts",
+    "scheme": "forex",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/alfa.png",
@@ -9,7 +10,7 @@
     "splash": {
       "image": "./assets/alfa.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#163259"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -21,13 +22,32 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "com.eug.counts",
+      "versionCode": 1,
+      "permissions": [
+        "WRITE_EXTERNAL_STORAGE"
+      ],
       "adaptiveIcon": {
         "foregroundImage": "./assets/alfa.png",
-        "backgroundColor": "#FFFFFF"
+        "backgroundColor": "#163259"
       }
     },
     "web": {
       "favicon": "./assets/alfa.png"
-    }
+    },
+    "packagerOpts": {
+      "config": "metro.config.js",
+      "sourceExts": [
+        "js",
+        "jsx",
+        "tsx",
+        "css",
+        "scss",
+        "sass"
+      ]
+    },
+    "plugins": [
+      "sentry-expo"
+    ]
   }
 }
