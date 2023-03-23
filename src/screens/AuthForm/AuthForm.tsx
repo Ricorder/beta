@@ -18,8 +18,6 @@ const AuthForm: FC<AuthProps> = () => {
 	const [error, setError] = useState<boolean>(false);
 	const [login, setLogin] = useState<string>('');
 	const [password, setPassword] = useState<string>('');
-	// const [login, setLogin] = useState<string>('263512');
-	// const [password, setPassword] = useState<string>('TraderMan123');
 
 	const authHandler = async (): Promise<void> => {
 		if (login && password) {
