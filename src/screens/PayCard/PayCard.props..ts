@@ -1,6 +1,6 @@
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { SafeAreaProviderProps } from 'react-native-safe-area-context';
-import { StackParamList } from '../../App/AppTypes';
+import { StackParamList } from '../../../AppTypes';
 
 export interface TradeAcountsModel {
 	balance: {
@@ -38,4 +38,4 @@ export interface RequestModel {
 	url: string,
 }
 
-export interface PayProps extends SafeAreaProviderProps, NativeStackScreenProps<StackParamList> {};
+export interface PayProps extends SafeAreaProviderProps, NativeStackScreenProps<StackParamList> { };

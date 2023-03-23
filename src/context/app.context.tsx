@@ -1,21 +1,25 @@
-import { createContext, Dispatch, SetStateAction, useContext, useState } from 'react';
+import { createContext, Dispatch, SetStateAction, useContext, useState, PropsWithChildren } from 'react';
 
 export interface IAppContext {
-	counter?: number,
-	setCounter?: Dispatch<SetStateAction<number>>,
+	pinStorage: string,
+	setPinStorage: Dispatch<SetStateAction<string>>,
 }
 
-const AppContext = createContext<IAppContext>({ counter: 0});
+const AppContext = createContext<IAppContext>({
+	pinStorage: '',
+	setPinStorage: function (value: SetStateAction<string>): void {
+		throw new Error('Function not implemented.');
+	}
+});
 
-export const AppContextProvider = ({ children }) => {
-	const [counter, setCounter] = useState<number>(0);
-
+export const AppContextProvider = ({pinStorage, children }: PropsWithChildren<IAppContext>) => {
+const [pinStorageState, setPinStorageState] = useState<string>(pinStorage);
 
 	return (
 		<AppContext.Provider
 			value={{
-				counter,
-				setCounter,
+				pinStorage: pinStorageState,
+				setPinStorage: setPinStorageState,
 			}}
 		>
 		{children}

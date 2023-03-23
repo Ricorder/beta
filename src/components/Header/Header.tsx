@@ -1,18 +1,19 @@
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import { FC, useState, useEffect, memo, useCallback } from 'react';
 import { AllData, PersonalDataModel, HeaderProps } from './Header.props';
 import { datas } from './Header.functions';
-import { Text, View } from 'react-native';
+import { Pressable, Text, View } from 'react-native';
 import { s } from './HeaderStyles';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import Bell from './Bell';
 import { black, orange } from '../../constants/Constants';
 import Setting from './Setting';
+import { useNavigation } from '@react-navigation/native';
+import { propsStack } from '../../../AppTypes';
 
 const Header: FC<HeaderProps> = () => {
 	console.log('Header');
-	const [personal, setPersonal] = useState<PersonalDataModel>(null);
-
+	const [personal, setPersonal] = useState<PersonalDataModel>();
+	const { replace } = useNavigation<propsStack>()
 	const getData = useCallback( async (): Promise<void> => {
 		try {
 			const data: AllData = await datas();
@@ -26,12 +27,16 @@ const Header: FC<HeaderProps> = () => {
 		getData()
 	}, [])
 
+	const goProfilehHandler = (): void => {
+		replace('Profile');
+	}
+
 	return (
 		<SafeAreaProvider style={s.contain}>
-			<View style={s.upBlock}>
+			<Pressable style={s.upBlock} onPress={goProfilehHandler}>
 				<Text style={s.upText}>{personal && personal.firstName} </Text>
 				<Text style={s.arrow}> {'→'}</Text>
-			</View>
+			</Pressable>
 			<View style={s.icons}>
 				<View style={s.bell}><Bell fill={orange}/></View>
 				<View style={s.circle}><Text style={s.text}>4</Text></View>

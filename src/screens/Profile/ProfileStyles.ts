@@ -24,4 +24,8 @@ export const s = StyleSheet.create({
 		color: orange,
 		textAlign: 'center',
 	},
+	linear: {
+		width: '100%',
+		height: '100%'
+	}
 })

@@ -11,7 +11,8 @@ export const s = StyleSheet.create({
 		flexDirection: 'row',
 		alignItems: 'center',
 		justifyContent: 'space-between',
-		paddingTop: 10
+		paddingTop: 10,
+		marginVertical: 40,
 	},
 	title: {
 		fontFamily: 'roboto-bold',
@@ -27,7 +28,6 @@ export const s = StyleSheet.create({
 		fontWeight: '400',
 		fontSize: 16,
 		letterSpacing: 0.17136,
-		// paddingTop: 10
 	},
 	header: {
 		fontFamily: 'roboto-bold',
@@ -39,7 +39,6 @@ export const s = StyleSheet.create({
 		marginTop: 10,
 		paddingBottom: 10,
 		paddingLeft: 10,
-		backgroundColor: grey,
 		width: '100%'
 	},
 	input: {
@@ -57,4 +56,8 @@ export const s = StyleSheet.create({
 		color: orange,
 		textAlign: 'center',
 	},
+	linear: {
+		width: '100%',
+		height: '100%'
+	}
 })

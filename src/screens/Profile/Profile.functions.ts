@@ -1,5 +1,5 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { PROD_OLD, PROXY, PROXY_MOBILE, CHANGE_PASWORD } from 'react-native-dotenv';
+import { PROD_OLD, PROXY, CHANGE_PASWORD } from 'react-native-dotenv';
 import { mobile } from '../../constants/Constants';
 import { RequestModel } from './Profile.props'
 

@@ -1,7 +1,7 @@
 export const incomeDigit = (lp: number, b: number): number => 100 - (b * 100 / lp);
 
 export const income = (lp: number, b: number): string => {
-	const result: number = incomeDigit(lp, b)
+	const result: number = -incomeDigit(lp, b)
 	if(result < 0) {
 		return `+${result.toFixed(2)}%`
 	} else if(result > 0) {

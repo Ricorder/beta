@@ -5,7 +5,8 @@ export type StackParamList = {
 	AuthForm: undefined;
 	Deposit: undefined;
 	Profile: undefined;
-	Support: undefined;
+	Contacts: undefined;
+	Payments: undefined;
 	PayCard: {
 		id: string,
 		amount: string,
@@ -34,6 +35,7 @@ export type StackParamList = {
 	};
 	Passwords: undefined;
 	AddBank: undefined;
+	Pin: undefined;
 };
 
 export type propsStack = NativeStackNavigationProp<StackParamList>

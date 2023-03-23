@@ -24,7 +24,11 @@ export const s = StyleSheet.create({
 		marginHorizontal: 10,
 	},
 	text: {
-		fontFamily: 'roboto-regular'
+		fontFamily: 'roboto-regular',
+		fontSize: 20
+	},
+	text2: {
+		fontFamily: 'roboto-regular',
 	},
 	pay: {
 		flexDirection: 'row',
@@ -38,5 +42,9 @@ export const s = StyleSheet.create({
 	date: {
 		color: gray,
 		fontFamily: 'roboto-regular'
+	},
+	linear: {
+		width: '100%',
+		height: '100%'
 	}
 })

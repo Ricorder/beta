@@ -11,6 +11,7 @@ declare module 'react-native-dotenv' {
 	export const TRUNK: string;
 	
 	export const LOGIN: string;
+	export const PIN: string;
 	export const CHANGE_PASWORD: string;
 
 	export const TRADE_ACCOUNTS: string;
@@ -23,4 +24,5 @@ declare module 'react-native-dotenv' {
 	export const LIST: string;
 	export const REASON: string;
 	export const ADDBANK: string;
+	export const REQUISITES: string;
 }

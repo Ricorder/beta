@@ -23,7 +23,6 @@ export const s = StyleSheet.create({
 		top: 2,
 	},
 	text: {
-		fontFamily: 'roboto-regular',
 		fontWeight: '400',
 		fontSize: 16,
 		letterSpacing: 0.17136,
@@ -38,7 +37,6 @@ export const s = StyleSheet.create({
 		paddingTop: 40,
 	},
 	tire: {
-		fontFamily: 'roboto-regular',
 		fontWeight: '300',
 		fontSize: 14,
 	},
@@ -57,4 +55,8 @@ export const s = StyleSheet.create({
 		color: orange,
 		textAlign: 'center',
 	},
+	linear: {
+		width: '100%',
+		height: '100%'
+	}
 })

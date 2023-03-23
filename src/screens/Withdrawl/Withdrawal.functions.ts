@@ -1,26 +1,31 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
-import { REASON, LIST, WITHDRAWAL, PROD_NEW, PROD_OLD, TRUNK } from 'react-native-dotenv';
+import { REASON, WITHDRAWAL, PROD_OLD, REQUISITES } from 'react-native-dotenv';
 import { GetModel } from './Withdrawal.props.';
 import uuid from 'react-native-uuid';
 
-export const urls = [LIST, REASON];
-export const optionsGet = async (url: string): Promise<GetModel> => {
+export const urls = [REQUISITES, REASON];
+export const optionsGet = async (url: string, cur?: string): Promise<GetModel> => {
 	const token = await AsyncStorage.getItem('token');
+	const newUrl = `${url}?accountType=external&currency=${cur}`
 	return {
 		method: 'get',
 		headers: {
 			Authorization: `Bearer ${token}`
 		},
-		url: `${PROD_OLD}${url}`,
+		url: `${PROD_OLD}${url == '/v1/accounts' ? newUrl : url}`,
 	}
 }
 
-export async function datas(): Promise<any> {
+// REASON = '/v2/my/finance/withdrawal/reasons'
+// REQUISITES = '/v1/accounts'
+// {{oldHost}}/v1/accounts?accountType=external
+
+export async function datas(currency: string): Promise<any> {
 	return await Promise.all(
 		urls.map(async (item: string) =>
-			(item === LIST)
-				? (await axios(await optionsGet(item))).data.data.edges
+			(item === REQUISITES)
+				? (await axios(await optionsGet(item, currency))).data
 				: (await axios(await optionsGet(item))).data
 		)
 	)

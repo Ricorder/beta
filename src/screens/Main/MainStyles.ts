@@ -26,47 +26,8 @@ export const s = StyleSheet.create({
 		borderColor: grey,
 		paddingBottom: '3%',
 	},
+	linear: {
+		width: '100%',
+		height: '100%'
+	}
 })
-
-
-// const Platform = {
-// 	"OS": "android",
-// 	"Version": 24,
-// 	"__constants": {
-// 		"Brand": "Meizu",
-// 		"Fingerprint": "Meizu/meizu_PRO7Plus/PRO7Plus:7.0/NRD90M/1553653465:user/release-keys",
-// 		"Manufacturer": "Meizu",
-// 		"Model": "PRO 7 Plus",
-// 		"Release": "7.0",
-// 		"Serial": "793HSDTGQNUEY",
-// 		"Version": 24,
-// 		"isTesting": false,
-// 		"reactNativeVersion": {
-// 			"major": 0,
-// 			"minor": 69,
-// 			"patch": 0,
-// 			"prerelease": null
-// 		},
-// 		"uiMode": "normal"
-// 	},
-// 	"constants": {
-// 		"Brand": "Meizu",
-// 		"Fingerprint": "Meizu/meizu_PRO7Plus/PRO7Plus:7.0/NRD90M/1553653465:user/release-keys",
-// 		"Manufacturer": "Meizu",
-// 		"Model": "PRO 7 Plus",
-// 		"Release": "7.0",
-// 		"Serial": "793HSDTGQNUEY",
-// 		"Version": 24,
-// 		"isTesting": false,
-// 		"reactNativeVersion": {
-// 			"major": 0,
-// 			"minor": 69,
-// 			"patch": 0,
-// 			"prerelease": null
-// 		},
-// 		"uiMode": "normal"
-// 	},
-// 	"isTV": false,
-// 	"isTesting": false,
-// 	"select": [Function select]
-// }

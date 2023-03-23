@@ -1,10 +1,10 @@
 import { memo } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { Pressable, Text, View } from 'react-native';
-import { propsStack } from '../../App/AppTypes';
+import { propsStack } from '../../../AppTypes';
 import { s } from './FooterStyles';
 import Ruble from './Ruble';
-import { black, gray, orange } from '../../constants/Constants';
+import { gray, orange } from '../../constants/Constants';
 import Home from './Home';
 import Phone from './Phone';
 
@@ -20,14 +20,14 @@ const Footer = () => {
 	}
 
 	const goProfilehHandler = (): void => {
-		if(screen !== 'Profile') {
-			replace('Profile');
+		if(screen !== 'Payments') {
+			replace('Payments');
 		}
 	}
 
 	const goSupportHandler = (): void => {
-		if(screen !== 'Support') {
-			replace('Support');
+		if(screen !== 'Contacts') {
+			replace('Contacts');
 		}
 	}
 
@@ -41,15 +41,15 @@ const Footer = () => {
 				}
 			</Pressable>
 			<Pressable style={s.block} onPress={goProfilehHandler}>
-				<Ruble fill={screen === 'Profile' ? orange : gray}/>
-				{screen === 'Profile'
+				<Ruble fill={screen === 'Payments' ? orange : gray}/>
+				{screen === 'Payments'
 					?<Text style={s.color}>Платежи</Text>
 					: null
 				}
 			</Pressable>
 			<Pressable style={s.block} onPress={goSupportHandler}>
-				<Phone fill={screen === 'Support' ? orange : gray}/>
-				{screen === 'Support'
+				<Phone fill={screen === 'Contacts' ? orange : gray}/>
+				{screen === 'Contacts'
 					?<Text style={s.color}>Контакты</Text>
 					: null
 				}

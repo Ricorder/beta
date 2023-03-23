@@ -37,7 +37,6 @@ const Currency: FC<Props> = ({ header, ...props }) => {
 	}, [])
 
 	return (
-
 		<Pressable style={header === 'Котировки' ? s.containerLast : s.container} {...props}>
 			{mobile
 				? <Pressable {...props}><Text style={s.h2}>{header}</Text></Pressable>

@@ -20,6 +20,10 @@ export const passLink = (): void => {
 	openURL('https://alfa.link/af')
 }
 
+export const passLink2 = (): void => {
+	replace('AuthForm');
+}
+
 // export const successLink = (): void => {
 // 	openURL('exp://192.168.40.113:19000/--/success')
 // }

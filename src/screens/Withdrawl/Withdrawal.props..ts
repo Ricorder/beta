@@ -1,41 +1,33 @@
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { SafeAreaProviderProps } from 'react-native-safe-area-context';
-import { StackParamList } from '../../App/AppTypes';
+import { StackParamList } from '../../../AppTypes';
+
+export interface ReasonModel {
+	key: string,
+	value: string
+}
 
 interface NodeModel {
-	node: {
-		id: string,
-			status: {
-				code: string,
-				displayName: string
-		},
-		amount: {
-			amount: string,
-			currency: string
-		},
-		sourceAccount: {
-			id: string,
-			login: string,
-			currency: string
-		},
-		createdAt: string,
-		destinationAccount: {
-			id: string,
-			name: string,
-			account: string
-		}
-	}
+	id: string,
+	owner: number,
+	type: string,
+	status: string,
+	currency: string,
+	createdAt: Date,
+	updatedAt: Date,
+	bankAccount: string,
+	bank: BankModel
 }
 
 export interface BankModel {
-	id: string,
 	name: string,
-	account: string
-}
-
-interface ReasonModel {
-	id: string,
-	description: string
+	account: string,
+	swift: string,
+	isAlfa: boolean,
+	bik: string,
+	inn: string,
+	kpp: string,
+	correspondentAccount: string,
 }
 
 export interface GetModel {
@@ -48,10 +40,10 @@ export interface GetModel {
 
 export interface ResponseData {
 	id: string,
-		sourceAccount: {
-			id: string,
-			login: string,
-			currency: string
+	sourceAccount: {
+		id: string,
+		login: string,
+		currency: string
 	},
 	destinationAccount: {
 		id: string,
@@ -70,4 +62,15 @@ export interface ResponseData {
 
 export interface AllData extends Array<NodeModel[] | ReasonModel[]> { 0: NodeModel[]; 1: ReasonModel[] }
 
-export interface WithdrawalProps extends SafeAreaProviderProps, NativeStackScreenProps<StackParamList> {};
+export interface WithdrawalProps extends SafeAreaProviderProps, NativeStackScreenProps<StackParamList> { };
+
+const data = {
+	"account": "40817810908480096639",
+	"bik": "044525593",
+	"correspondentAccount": "30101810200000000593",
+	"inn": "7728168971",
+	"isAlfa": false,
+	"kpp": "770801001",
+	"name": "Альфа-Банк, г. Москва",
+	"swift": ""
+}

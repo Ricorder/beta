@@ -2,12 +2,16 @@ import { StyleSheet } from 'react-native';
 
 export const s = StyleSheet.create({
 	contain: {
-		marginHorizontal: 30,
+		flex: 1,
+		marginHorizontal: '5%',
 	},
 	count: {
 		marginBottom: 30,
+		// fontSize: 10
 	},
 	pay: {
+		flex: 1,
+		marginHorizontal: 30,
 		// paddingTop: '3%',
 	},
 	title: {
@@ -27,18 +31,20 @@ export const s = StyleSheet.create({
 		width: '100%'
 	},
 	bottom: {
-		width: 275,
-		flexDirection: 'row',
+		justifyContent: 'center',
 		alignItems: 'center',
-		marginBottom: '10%',
+		
 	},
 	input: {
-		height: '38%',
+		width: '70%',
+		marginTop: 40
 	},
 	button: {
-		width: '50%',
-		height: '37%',
-		paddingHorizontal: 0,
-		right: 40
+		width: '70%',
+		whiteSpace: 'nowrap'
+	},
+	linear: {
+		width: '100%',
+		height: '100%'
 	}
 })

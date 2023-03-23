@@ -1,16 +1,16 @@
 {
   "expo": {
     "name": "Counts",
-    "slug": "counts",
+    "slug": "fuulNew",
     "scheme": "forex",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/alfa.png",
+    "icon": "./assets/candlestick.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/alfa.png",
+      "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#163259"
+      "backgroundColor": "#ffffff"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -19,7 +19,8 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "y"
     },
     "android": {
       "package": "com.eug.counts",
@@ -28,26 +29,17 @@
         "WRITE_EXTERNAL_STORAGE"
       ],
       "adaptiveIcon": {
-        "foregroundImage": "./assets/alfa.png",
-        "backgroundColor": "#163259"
+        "foregroundImage": "./assets/candlestick.png",
+        "backgroundColor": "#FFFFFF"
       }
     },
     "web": {
-      "favicon": "./assets/alfa.png"
+      "favicon": "./assets/candlestick.png"
     },
-    "packagerOpts": {
-      "config": "metro.config.js",
-      "sourceExts": [
-        "js",
-        "jsx",
-        "tsx",
-        "css",
-        "scss",
-        "sass"
-      ]
-    },
-    "plugins": [
-      "sentry-expo"
-    ]
+    "extra": {
+      "eas": {
+        "projectId": "3e48fb28-9a4f-453b-b9e5-cc88c95a7190"
+      }
+    }
   }
 }

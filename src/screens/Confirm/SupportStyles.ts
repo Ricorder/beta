@@ -15,5 +15,9 @@ export const s = StyleSheet.create({
 	text: {
 		marginBottom: 5,
 		marginTop: 20
+	},
+	linear: {
+		width: '100%',
+		height: '100%'
 	}
 })

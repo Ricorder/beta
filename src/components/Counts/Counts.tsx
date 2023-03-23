@@ -6,7 +6,7 @@ import { count } from './Counts.functions';
 import { CountsProps } from './Counts.props';
 import { s } from './CountsStyles';
 import { useNavigation } from '@react-navigation/native';
-import { propsStack } from '../../App/AppTypes';
+import { propsStack } from '../../../AppTypes';
 import Icon from '../Icon/Icon';
 
 const Counts = ({isBank, isEmpty, bankLogin, bank, id, amount, currency, platformLogin, ...props }: CountsProps): JSX.Element => {
@@ -22,17 +22,16 @@ const Counts = ({isBank, isEmpty, bankLogin, bank, id, amount, currency, platfor
 		} else {
 			navigate('AddBank');
 		}
-		
 	}
 	
 	return (
-		<Pressable style={{...s.block, ...props.style}} onPress={goCountHandler}>
+		<Pressable style={{...s.block, ...props.style}} onPress={isEmpty || !isBank ? goCountHandler : null}>
 			<Icon currency={currency}/>
 			<View style={s.miniblock}>
 				{isBank
 					? !isEmpty && <Text style={s.subtext}>{bankLogin ? 'Банковскийй счёт ...' : null}{bankLogin && bankLogin.slice(-4)}</Text>
 					:<Text style={s.subtext}>Торговый счёт ...{platformLogin.toString().slice(-4)}</Text>
-				}	
+				}
 				{isBank
 					?<Text style={s.uptext}>{bank}</Text>
 					:<Text style={s.uptext}>{Number.isInteger((Number(amount) / 100)) ? count(amount, currency)[0] : count(amount, currency)[0].concat(',')}<Text style={s.next}>{count(amount, currency)[1]}</Text></Text>

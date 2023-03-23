@@ -23,18 +23,17 @@ export const s = StyleSheet.create({
 		paddingBottom: '20%'
 	},
 	input: {
-		height: '38%',
-		marginHorizontal: '0%'
+		width: '70%',
+		marginTop: 40
 	},
 	bottom: {
-		width: 250,
-		flexDirection: 'row',
 		alignItems: 'center',
 	},
 	button: {
-		width: '50%',
-		height: '37%',
-		paddingHorizontal: 1,
-		right: 40
+		width: '70%',
+	},
+	linear: {
+		width: '100%',
+		height: '100%'
 	}
 })

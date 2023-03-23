@@ -6,7 +6,7 @@ export const s = StyleSheet.create({
 		flexDirection: 'row',
 		alignItems: 'center',
 		backgroundColor: white,
-		paddingLeft: 20,
+		paddingHorizontal: 20,
 		borderRadius: 10,
 		paddingTop: 0,
 	},
@@ -25,12 +25,13 @@ export const s = StyleSheet.create({
 	},
 	uptext: {
 		fontWeight: 'bold',
-		fontSize: 20,
-		fontFamily: 'roboto-regular'
+		fontSize: 14,
+		fontFamily: 'roboto-regular',
+		marginTop: 5
 	},
 	next: {
 		color: grey,
-		fontSize: 20
+		fontSize: 14
 	},
 	subtext: {
 		fontSize: 14,

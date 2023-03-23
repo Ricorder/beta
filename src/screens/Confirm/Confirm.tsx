@@ -3,12 +3,13 @@ import { useNavigation } from '@react-navigation/native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { Text, View } from 'react-native';
 import { SupportProps } from './Confirm.props.';
-import { propsStack } from '../../App/AppTypes';
+import { propsStack } from '../../../AppTypes';
 import { s } from './SupportStyles';
 import Field from '../../components/Field/Field';
 import Button from '../../components/Button/Button';
 import Cross from './Cross';
 import { reSend, send } from './Confirm.functions';
+import { LinearGradient } from 'expo-linear-gradient';
 
 const Confirm: FC<SupportProps> = ({ route, navigation, ... props }) => {
 	console.log('Confirm');
@@ -43,15 +44,22 @@ const Confirm: FC<SupportProps> = ({ route, navigation, ... props }) => {
 	}
 	
 	return (
-		<SafeAreaProvider style={{...s.contain, ... props}}>
-			<View style={s.block}>
-				<Cross onPress={comeBackHandler}/>
-				<Text style={s.text}>Введите СМС код</Text>
-				<Field value={code} onChangeText={setCode} keyboardType='numeric' />
-				<Button onPress={sendCode} title='Отправить код'/>
-				{show && <Button onPress={repeatCode} title='Отправить повторно'/>}
-			</View>
-		</SafeAreaProvider>
+		<LinearGradient
+			colors={['#fac3c3', '#e6e6e6']}
+			start={{ x: 0, y: 1}}
+			end={{ x: 0.5, y: 0.5 }}
+			style={s.linear}
+		>
+			<SafeAreaProvider style={{...s.contain, ... props}}>
+				<View style={s.block}>
+					<Cross onPress={comeBackHandler}/>
+					<Text style={s.text}>Введите СМС код</Text>
+					<Field value={code} onChangeText={setCode} keyboardType='numeric' />
+					<Button onPress={sendCode} title='Отправить код'/>
+					{show && <Button onPress={repeatCode} title='Отправить повторно'/>}
+				</View>
+			</SafeAreaProvider>
+		</LinearGradient>
 	)
 }
 

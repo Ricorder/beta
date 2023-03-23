@@ -29,5 +29,9 @@ export const s = StyleSheet.create({
 	},
 	include: {
 		marginLeft: '5%'
+	},
+	linear: {
+		width: '100%',
+		height: '100%'
 	}
 })

@@ -25,8 +25,8 @@ const Paire: FC<Props> = ({ bid, ask, name, last_price }) => {
 				<Text style={s.currency}>{change(name)[5]}</Text>
 			</Text>
 			<Text style={s.white}>{income(last_price, b)[0]}
-				<Text style={incomeDigit(last_price, b) > 0 ? s.plus : incomeDigit(last_price, b) === 0 ? s.white : s.minus}>{income(last_price, b)[1]}</Text>
-				<Text style={incomeDigit(last_price, b) > 0 ? s.plus : incomeDigit(last_price, b) === 0 ? s.black : s.minus}>{income(last_price, b).slice(2)}</Text>
+				<Text style={incomeDigit(last_price, b) < 0 ? s.plus : incomeDigit(last_price, b) === 0 ? s.white : s.minus}>{income(last_price, b)[1]}</Text>
+				<Text style={incomeDigit(last_price, b) < 0 ? s.plus : incomeDigit(last_price, b) === 0 ? s.black : s.minus}>{income(last_price, b).slice(2)}</Text>
 			</Text>
 			<Text style={Number(bidOne(massBid[0])[0]) !== 0 ? s.black : s.white}>{bidOne(massBid[0])[0]}
 				<Text style={Number(bidOne(massBid[0])[1]) === 0 && Number(bidOne(massBid[0])[0]) !== 0 || Number(bidOne(massBid[0])[1]) !== 0 && Number(bidOne(massBid[0])[0]) === 0 ? s.black : s.white}>{`${bidOne(massBid[0])[1]}`}</Text>

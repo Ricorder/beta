@@ -23,5 +23,13 @@ export const s = StyleSheet.create({
 		alignItems: 'center',
 		height: 100,
 		backgroundColor: 'blue',
-	}
+	},
+	linear: {
+		width: '100%',
+		height: '100%'
+	},
+	button: {
+		borderRadius: 35,
+		marginVertical: '5%',
+	},
 })

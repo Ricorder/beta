@@ -6,8 +6,8 @@ import { s } from './FieldStyles';
 import OpenEye from './OpenEye';
 
 const Field = ({ style, righ, secureTextEntry, ...props }: FieldProps): JSX.Element => {
-	const [state, setState] = useState(true)
-	const [secure, setSecure] = useState(props.secureTextEntry)
+	const [state, setState] = useState<boolean>(true)
+	const [secure, setSecure] = useState<boolean>(secureTextEntry)
 	const [color, setColor] = useState('rgb(118, 118, 118)')
 	const closeEyeHandler = async (): Promise<void> => {
 		setState(false)
@@ -31,9 +31,9 @@ const Field = ({ style, righ, secureTextEntry, ...props }: FieldProps): JSX.Elem
 				autoCapitalize='none'
 				autoCorrect={false}
 				borderColor={color}
-				{...props}
-				secureTextEntry={secure}
 				style={{...s.input, ...style}}
+				secureTextEntry={secure}
+				{...props}
 			/>
 			{state
 				? secureTextEntry && <OpenEye style={righ} onPress={closeEyeHandler}/>
